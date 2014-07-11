@@ -5,7 +5,9 @@
 # -----------------------------
 
 # Read file
-data <- read.csv2("household_power_consumption.txt",
+# (note the data file must be in the directory from which the one containing 
+#  the script hangs)
+data <- read.csv2("./../household_power_consumption.txt",
                   na.strings="?",
                   header=TRUE,
                   stringsAsFactors=FALSE)
@@ -32,35 +34,21 @@ colnames(data)[1] <- "Datetime"
 # -----------------------------------------------------
 
 # The plot is a thin black line; x-axis: day of the week; y-asix: active power
-# (Note: The annotation language depends on the local configuration)
+# (Note: The week day language depends on the local configuration)
 plot(data$Datetime, data$Global_active_power,
      type = "l",      
      xlab = "",
      ylab = "Global Active Power (kilowatts)")
 
+
 # This stores the plot in a file called plot2.png
 # (alternatively the precedent plot could be copied to a device, but it is not
 #  an exact operation)
-<<<<<<< HEAD
 # The size is the default one, but included for the shake of clarity
-=======
->>>>>>> 88389f6a567a2eba5c44b65e8c963285def9b213
-png(file = "plot2.png") # opens the png devive
+# The folder ./figure/ must exist
+png(file = "./figure/plot2.png", width = 480, height = 480, units = "px") # opens the png devive
 plot(data$Datetime,data$Global_active_power,
      type = "l", 
      xlab = "",
-<<<<<<< HEAD
-     ylab = "Global Active Power (kilowatts)",
-     width = 480,
-     height = 480,
-     units = "px")
-dev.off() # closes the png device
-
-
-
-
-
-=======
      ylab = "Global Active Power (kilowatts)")
 dev.off() # closes the png device
->>>>>>> 88389f6a567a2eba5c44b65e8c963285def9b213

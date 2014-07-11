@@ -5,6 +5,8 @@
 # -----------------------------
 
 # Read file
+# (note the data file must be in the directory from which the one containing 
+#  the script hangs)
 data <- read.csv2("./../household_power_consumption.txt",
                   na.strings="?",
                   header=TRUE,
@@ -41,13 +43,9 @@ hist(data$Global_active_power, col="red",
      xlab = "Global Active Power (kilowatts)")
 
 # This stores the plot in a file called plot1.png
-# (alternatively the precedent plot could be copied to a device, but it is not
-#  an exact operation)
 # The size is the default one, but included for the shake of clarity
-png(file = "plot1.png") # opens the png devive
+png(file = "./figure/plot1.png", width=480, height=480, units="px") # opens the png devive
 hist(data$Global_active_power, col="red", 
      main = "Global Active Power",
-     xlab = "Global Active Power (kilowatts)",
-     width = 480,
-     height = 480)
+     xlab = "Global Active Power (kilowatts)")
 dev.off() # closes the png device

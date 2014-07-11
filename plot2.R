@@ -41,9 +41,26 @@ plot(data$Datetime, data$Global_active_power,
 # This stores the plot in a file called plot2.png
 # (alternatively the precedent plot could be copied to a device, but it is not
 #  an exact operation)
+<<<<<<< HEAD
+# The size is the default one, but included for the shake of clarity
+=======
+>>>>>>> 88389f6a567a2eba5c44b65e8c963285def9b213
 png(file = "plot2.png") # opens the png devive
 plot(data$Datetime,data$Global_active_power,
      type = "l", 
      xlab = "",
+<<<<<<< HEAD
+     ylab = "Global Active Power (kilowatts)",
+     width = 480,
+     height = 480,
+     units = "px")
+dev.off() # closes the png device
+
+
+
+
+
+=======
      ylab = "Global Active Power (kilowatts)")
 dev.off() # closes the png device
+>>>>>>> 88389f6a567a2eba5c44b65e8c963285def9b213

@@ -11,6 +11,12 @@ data <- read.csv2("household_power_consumption.txt",
                   stringsAsFactors=FALSE)
 
 # We are interested only in data from Feb 1, 2007 and Feb 2, 2007
+<<<<<<< HEAD
+# d <- as.POSIXlt(data$Date,format="%d/%m/%Y")
+# k <- d==as.POSIXlt("2007-02-01",format="%Y-%m-%d") | 
+#      d==as.POSIXlt("2007-02-02",format="%Y-%m-%d")
+=======
+>>>>>>> 88389f6a567a2eba5c44b65e8c963285def9b213
 k <- data$Date %in% c("1/2/2007","2/2/2007")
 data <- data[k,]
 
@@ -40,9 +46,28 @@ hist(data$Global_active_power, col="red",
 # This stores the plot in a file called plot1.png
 # (alternatively the precedent plot could be copied to a device, but it is not
 #  an exact operation)
+<<<<<<< HEAD
+# The size is the default one, but included for the shake of clarity
+png(file = "plot1.png") # opens the png devive
+hist(data$Global_active_power, col="red", 
+     main = "Global Active Power",
+     xlab = "Global Active Power (kilowatts)",
+     width = 480,
+     height = 480)
+dev.off() # closes the png device
+
+
+
+
+
+
+
+
+=======
 png(file = "plot1.png") # opens the png devive
 hist(data$Global_active_power, col="red", 
      main = "Global Active Power",
      xlab = "Global Active Power (kilowatts)")
 dev.off() # closes the png device
 
+>>>>>>> 88389f6a567a2eba5c44b65e8c963285def9b213
